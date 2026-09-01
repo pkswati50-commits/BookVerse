@@ -1,0 +1,252 @@
+{
+  "app_name": "BOOK VERSE",
+  "personality": "6 Glass / Luxe",
+  "personality_one_liner": "A cinematic, elegant, and classic bookstore experience draped in midnight charcoal and antique gold, where every book feels like a rare discovery.",
+  "color": {
+    "surface": "#FDFBF7",
+    "onSurface": "#121212",
+    "surfaceSecondary": "#F2EFE9",
+    "onSurfaceSecondary": "#595959",
+    "surfaceTertiary": "#E8E4DB",
+    "onSurfaceTertiary": "#737373",
+    "surfaceInverse": "#0F0F0F",
+    "onSurfaceInverse": "#F7F5F0",
+    "brand": "#B89020",
+    "brandPrimary": "#9E7B1A",
+    "onBrandPrimary": "#FFFFFF",
+    "brandSecondary": "#B89020",
+    "onBrandSecondary": "#FFFFFF",
+    "brandTertiary": "#F0E5C6",
+    "onBrandTertiary": "#9E7B1A",
+    "success": "#2D5A27",
+    "onSuccess": "#FFFFFF",
+    "warning": "#8A6300",
+    "onWarning": "#FFFFFF",
+    "error": "#8B2A2A",
+    "onError": "#FFFFFF",
+    "info": "#2C4C5E",
+    "onInfo": "#FFFFFF",
+    "border": "#E8E4DB",
+    "borderStrong": "#D6C494",
+    "divider": "#EFEBE0",
+    
+    "dark_surface": "#0F0F0F",
+    "dark_onSurface": "#F7F5F0",
+    "dark_surfaceSecondary": "#1A1A1A",
+    "dark_onSurfaceSecondary": "#B3B1AD",
+    "dark_surfaceTertiary": "#262626",
+    "dark_onSurfaceTertiary": "#8C8B87",
+    "dark_surfaceInverse": "#FDFBF7",
+    "dark_onSurfaceInverse": "#0F0F0F",
+    "dark_brand": "#D4AF37",
+    "dark_brandPrimary": "#C5A028",
+    "dark_onBrandPrimary": "#0A0A0A",
+    "dark_brandSecondary": "#E1C15A",
+    "dark_onBrandSecondary": "#0A0A0A",
+    "dark_brandTertiary": "#403511",
+    "dark_onBrandTertiary": "#E1C15A",
+    "dark_success": "#44813D",
+    "dark_onSuccess": "#0F0F0F",
+    "dark_warning": "#CBA426",
+    "dark_onWarning": "#0F0F0F",
+    "dark_error": "#C75050",
+    "dark_onError": "#0F0F0F",
+    "dark_info": "#4A7C96",
+    "dark_onInfo": "#0F0F0F",
+    "dark_border": "#262626",
+    "dark_borderStrong": "#403511",
+    "dark_divider": "#1F1F1F"
+  },
+  "typography": {
+    "displayFontFamily": "Cormorant Garamond",
+    "textFontFamily": "Geist",
+    "scale": {
+      "sm": 12,
+      "base": 14,
+      "lg": 16,
+      "xl": 20,
+      "2xl": 24
+    }
+  },
+  "spacing": {
+    "rule": "Generous, cinematic margins. Content should never feel cramped. Use padding to give focus to cover art.",
+    "xs": 4,
+    "sm": 8,
+    "md": 12,
+    "lg": 16,
+    "xl": 24,
+    "2xl": 32,
+    "3xl": 48
+  },
+  "radius_tokens": {
+    "sm": 6,
+    "md": 12,
+    "lg": 20,
+    "pill": 999
+  },
+  "shadow_tier": "0",
+  "navigation": "bottom_tabs",
+  "icon_set": "Feather",
+  "glassmorphism": {
+    "enabled": true,
+    "do's": [
+      "Use heavy glass effect for bottom tab bar and sticky headers.",
+      "Apply glass blur over hero image background to make text readable.",
+      "Use frosted glass panels for floating action buttons or bottom sheet drag handles."
+    ],
+    "dont's": [
+      "Do not apply glass to body content regions or form fields.",
+      "Do not make lists fully glass—keep them solid surfaceSecondary for readability."
+    ]
+  },
+  "platform_libraries": {
+    "glass": {
+      "ios": "expo-glass-effect",
+      "android": "expo-blur",
+      "low_end_android_fallback": "solid surfaceSecondary"
+    },
+    "image": "expo-image",
+    "blur": "expo-blur",
+    "bottom_sheet": "@gorhom/bottom-sheet",
+    "animation": "react-native-reanimated",
+    "gesture": "react-native-gesture-handler"
+  },
+  "screens": [
+    {
+      "name": "Home Feed",
+      "purpose": "A cinematic discovery experience spotlighting hero books, categories, best sellers, and new arrivals.",
+      "states": {
+        "loading": "Skeleton placeholders mimicking book covers and header blocks.",
+        "empty": "N/A - Home should always display curated content.",
+        "error": "Elegant text centered: 'The archives are currently closed.' + Retry button."
+      },
+      "layout": "Hero Banner at the top featuring a full-width image with a vertical dark gradient scrim and a featured book. Horizontal scroll rows below for 'Best Sellers', 'New Arrivals', and 'Trending', separated by elegant typography headers. Category chips row. All books displayed as elegant portrait cards with metadata."
+    },
+    {
+      "name": "Books Listing",
+      "purpose": "A highly functional yet premium catalog view for browsing books with search, filters, and sort options.",
+      "states": {
+        "loading": "Grid of shimmering book cover skeletons.",
+        "empty": "Illustration of a solitary antique bookshelf with text 'No tomes found for your search.'",
+        "error": "Error message with a 'Refresh Catalog' CTA."
+      },
+      "layout": "Sticky glassmorphic search bar and filter/sort row at the top. Below is a 2-column grid of books. Each card showcases the cover art elegantly framed. Category chip row below the search for quick filtering."
+    },
+    {
+      "name": "Book Details",
+      "purpose": "A deep dive into a book's world, featuring immersive cover presentation, rich metadata, reviews, and related titles.",
+      "states": {
+        "loading": "Spinner over a blurred placeholder cover.",
+        "empty": "Book not found message.",
+        "error": "Error message with 'Return to Catalog' button."
+      },
+      "layout": "Immersive hero section: blurred background image of the cover art with the crisp book cover centered on top. Generous whitespace around the title (Serif) and author. Sectioned content below: Synopsis, Details (Pages, Publisher), Reviews (styled elegantly with stars), and horizontal 'Related Books' scroll. Sticky 'Add to Cart / Buy Now' primary CTA at the bottom in a frosted glass container."
+    },
+    {
+      "name": "Shopping Cart",
+      "purpose": "A clean, trustworthy checkout staging area to review items and apply coupons.",
+      "states": {
+        "loading": "Spinner.",
+        "empty": "Empty cart icon/illustration with 'Your cart is as empty as an unwritten page.' and a 'Browse Books' primary CTA.",
+        "error": "Failed to update cart message."
+      },
+      "layout": "List of items with small cover thumbnails, title, price, and quantity steppers. A coupon input field below the list. Sticky bottom sheet showing subtotal, tax, and a bold 'Proceed to Checkout' button."
+    },
+    {
+      "name": "Wishlist",
+      "purpose": "A personal archive of desired books.",
+      "states": {
+        "loading": "Grid skeletons.",
+        "empty": "Illustration of a closed leather journal with 'Your wishlist is currently empty.'",
+        "error": "Error fetching saved items."
+      },
+      "layout": "Simple 2-column grid or list view mirroring the Books Listing, but with easy 'Remove' actions and 'Move to Cart' buttons."
+    },
+    {
+      "name": "Auth (Login/Signup)",
+      "purpose": "The elegant gateway into the user's personal account.",
+      "states": {
+        "loading": "Button disabled with small inline spinner.",
+        "empty": "N/A",
+        "error": "Inline elegant red warning text below the input field."
+      },
+      "layout": "Cinematic full-screen background image of a dark library with a heavy gradient scrim. White/Gold text on top. Clean, single-column input fields (surfaceTertiary background, no heavy borders). Bottom-anchored primary action button."
+    },
+    {
+      "name": "Checkout (Multi-step)",
+      "purpose": "A seamless, reassuring flow to finalize the purchase across Address, Summary, Payment, and Confirmation.",
+      "states": {
+        "loading": "Overlay spinner with 'Processing your order...'",
+        "empty": "N/A",
+        "error": "Clear error message if payment fails."
+      },
+      "layout": "Progress indicator at the top (e.g., 1. Address, 2. Summary, 3. Payment). Form inputs for addresses. A clean summary sheet. A mocked payment entry using elegant, secure-looking inputs. Final confirmation screen featuring a success checkmark and the order number."
+    },
+    {
+      "name": "Order Tracking Timeline",
+      "purpose": "A beautiful, step-by-step visual representation of the order's journey.",
+      "states": {
+        "loading": "Skeleton of the timeline.",
+        "empty": "No active orders.",
+        "error": "Could not fetch tracking details."
+      },
+      "layout": "Vertical timeline with elegant gold nodes for completed steps and muted nodes for future steps (e.g., Order Placed -> Processing -> Shipped -> Delivered). Book thumbnail at the top."
+    },
+    {
+      "name": "User Profile",
+      "purpose": "The user's central hub for settings, past orders, and addresses.",
+      "states": {
+        "loading": "Loading spinner.",
+        "empty": "N/A",
+        "error": "Error fetching profile."
+      },
+      "layout": "Header with user's initial avatar in a gold-tinted circle if no photo. List of navigation rows (Orders, Addresses, Reviews, Settings, Admin Panel) each featuring a leading icon inside a tinted surface block and a trailing chevron."
+    },
+    {
+      "name": "Admin Dashboard",
+      "purpose": "High-level analytics and management entry point for store owners.",
+      "states": {
+        "loading": "Skeletons for stat cards.",
+        "empty": "No data available.",
+        "error": "Failed to load analytics."
+      },
+      "layout": "Grid of summary stat cards (Revenue, Orders, Books) using surfaceSecondary blocks. Simple bar or line charts (if using a chart lib) or mocked data lists. Links to Book Management and Order Management."
+    },
+    {
+      "name": "Admin Book / Order Management",
+      "purpose": "Functional interfaces for adding/editing catalog items and updating order statuses.",
+      "states": {
+        "loading": "List skeletons.",
+        "empty": "No books/orders found.",
+        "error": "Error fetching list."
+      },
+      "layout": "List view of books/orders with quick action menus (edit/delete/update status). Adding a book uses a clean, single-column form with image upload placeholder."
+    }
+  ],
+  "images": {
+    "hero_banner": {
+      "url": "https://images.unsplash.com/photo-1642406577614-e9396bdec684?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHwyfHxjaW5lbWF0aWMlMjBtb29keSUyMGJvb2tzdG9yZSUyMGludGVyaW9yfGVufDB8fHx8MTc4ODE5OTM3NXww&ixlib=rb-4.1.0&q=85",
+      "dark": "https://images.unsplash.com/photo-1758812647166-6d4166137f19?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NzB8MHwxfHNlYXJjaHw0fHxjaW5lbWF0aWMlMjBtb29keSUyMGJvb2tzdG9yZSUyMGludGVyaW9yfGVufDB8fHx8MTc4ODE5OTM3NXww&ixlib=rb-4.1.0&q=85",
+      "alt": "Cinematic bookstore interior showcasing classic luxury library aesthetic"
+    },
+    "auth_background": {
+      "url": "https://images.unsplash.com/photo-1775144657351-1708d0ea060d?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHw0fHxsdXh1cnklMjBjbGFzc2ljJTIwbGlicmFyeSUyMGFlc3RoZXRpY3xlbnwwfHx8fDE3ODgxOTkzNzV8MA&ixlib=rb-4.1.0&q=85",
+      "dark": "https://images.unsplash.com/photo-1696455039676-243460d60de0?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NDk1Nzh8MHwxfHNlYXJjaHwyfHxsdXh1cnklMjBjbGFzc2ljJTIwbGlicmFyeSUyMGFlc3RoZXRpY3xlbnwwfHx8fDE3ODgxOTkzNzV8MA&ixlib=rb-4.1.0&q=85",
+      "alt": "Elegant library room with ornate furniture and bookshelves"
+    },
+    "book_cover_placeholder": {
+      "url": "https://images.unsplash.com/photo-1755541608494-5c02cf56e1f4?crop=entropy&cs=srgb&fm=jpg&ixid=M3w3NTY2Nzh8MHwxfHNlYXJjaHwxfHxibGFjayUyMGFuZCUyMGdvbGQlMjB2aW50YWdlJTIwYm9vayUyMGNvdmVyfGVufDB8fHx8MTc4ODE5OTM3NXww&ixlib=rb-4.1.0&q=85",
+      "alt": "Ornate gold floral pattern on dark leather vintage book cover"
+    }
+  },
+  "instructions_to_main_agent": [
+    "Strictly follow the 6 Glass / Luxe personality. The design must feel high-end, cinematic, and polished. Do NOT use standard Material or standard iOS blank layouts.",
+    "Colors: The app relies heavily on stark contrasts between black/charcoal backgrounds and white/gold accents in dark mode, and ivory backgrounds with black/gold in light mode. Do not introduce stray colors like blue or purple.",
+    "Typography: Always use Cormorant Garamond (or similar elegant serif) for all headings, hero titles, and book titles. Use Geist (or clean sans-serif) for body text, author names, prices, and labels. Do not use heavy font weights (>500). Size dictates hierarchy.",
+    "Images & Scrims: ANY image used as a background (hero section, auth screen) MUST have a vertical gradient scrim overlay to guarantee text readability on top. Never render text directly on raw images.",
+    "Glassmorphism: Use blur/glass effects heavily for the bottom tab bar, sticky headers over scrolling content, floating buttons, and the backdrop of the Book Details hero image.",
+    "Layout Rules: Ensure generous padding (lg/xl). Books should be displayed in elegant portrait aspect ratios, not cropped into squares. Content rows should feel breathable.",
+    "Sticky Actions: For Book Details (Add to Cart) and Checkout (Confirm), ensure the primary CTA is locked at the bottom of the screen (in a frosted glass container) and does not scroll away.",
+    "Tabs: Implement only 4 main tabs as requested: Home, Books, Cart, Profile. Use Feather icons."
+  ]
+}
